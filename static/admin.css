@@ -1,0 +1,58 @@
+
+body {
+  background: #090807;
+  color: #e9e8e7;
+  font: 22px Verdana, Tahoma, sans-serif;
+}
+
+.main {
+  white-space: nowrap;
+  position: relative;
+}
+
+.song {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 1em;
+  border: 2px solid #555;
+  padding-bottom: 4px;
+  min-width: 10em;
+}
+
+.song h2 {
+  margin: 0; padding: 0;
+  background: #555;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.section {
+  padding: 6px 8px;
+}
+.group {
+  padding: 2px 6px;
+  border: 2px solid #000;
+}
+.group.active {
+  background: #353433;
+  border-color: #656463;
+}
+
+h1 {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  margin: 0;
+  font: 200 20pt Helvetica Neue;
+  color: #8b8685;
+}
+
+h1 span {
+  display: inline-block;
+  padding: 3px 5px;
+  color: #454443;
+}
+h1 span.active {
+  box-shadow: 0 0 5px #8b8685;
+}
+

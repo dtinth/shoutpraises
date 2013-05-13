@@ -1,0 +1,23 @@
+
+body {
+  background: #252423;
+  font: bold 30px Cordia New, Thonburi;
+  color: #fff;
+}
+
+#text {
+  font-size: 50pt;
+  text-align: center;
+  margin-top: 50px;
+  text-shadow: 0 4px 1px #000;
+}
+
+#song {
+  position: absolute;
+  color: #8b8685;
+  right: 40px;
+  bottom: 40px;
+}
+
+
+
