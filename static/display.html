@@ -1,14 +1,24 @@
 <!DOCTYPE html>
+<html ng-app="shoutpraises">
 <meta charset=utf-8>
 <title>Display</title>
 <link rel=stylesheet href=display.css>
 
-<body>
+<body ng-controller="MainController">
 
-<div id="text"></div>
-<div id="song"></div>
+<script src="/version"></script>
+<div id="text">
+  <div ng-repeat="line in current.text">{{line}}</div>
+  <div ng-hide="$ynchronized">
+    shoutpraises v<script>document.write(version)</script><br>
+    <div class="syncing">(synchronizing)</div>
+  </div>
+</div>
+
+<div id="song">{{current.song}}</div>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="components/jquery/jquery.js"></script>
-<script src="display.js"></script>
-
+<script src="components/angular/angular.js"></script>
+<script src="sync.js"></script>
+<script src="app.js"></script>

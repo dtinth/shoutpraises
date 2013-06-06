@@ -1,13 +1,30 @@
 <!DOCTYPE html>
+<html ng-app="shoutpraises.admin">
 <meta charset=utf-8>
 <title>Admin</title>
 <link rel=stylesheet href=admin.css>
 <meta name="viewport" content="width=device-width, initial-scale=1.0; user-scalable=no">
 
-<body>
+<body ng-controller="MainController">
 
-<h1>shoutpraises control panel <span data-group="blank" onclick="" id="blank">[clear]</span></h1>
+<h1>shoutpraises control panel <span id="blank" ng-class="activeClass('blank', blank)" touch ng-click="displayBlank()">[clear]</span></h1>
+
+<div id="main" class="main" ng-controller="SongController">
+  <div ng-repeat="song in lyrics" class="song">
+    <h2>{{song.name}}</h2>
+    <div ng-repeat="section in song.contents" class="section">
+      <div ng-repeat="group in section" ng-class="activeClass('group', group)" touch ng-click="display(group)">
+        <div ng-repeat="line in group.text" class="line">{{line}}</div>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="components/jquery/jquery.js"></script>
+<script src="components/angular/angular.js"></script>
+<script src="sync.js"></script>
+<script src="touch.js"></script>
 <script src="lyrics"></script>
+<script src="app.js"></script>
 <script src="admin.js"></script>
+
