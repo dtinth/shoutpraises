@@ -1,4 +1,10 @@
+@import "app.css";
 
+@font-face {
+  font-family: Umpush;
+  font-weight: bold;
+  src: url(Umpush-Bold.ttf);
+}
 body {
   background: #090807;
   color: #e9e8e7;
@@ -14,6 +20,7 @@ body {
   display: inline-block;
   vertical-align: top;
   margin-right: 1em;
+  margin-bottom: 80px;
   border: 2px solid #555;
   padding-bottom: 4px;
   min-width: 10em;
@@ -29,7 +36,11 @@ body {
 .section {
   padding: 6px 8px;
 }
+.section:not(:last-child) {
+  border-bottom: 1px solid #444;
+}
 .group {
+  font: bold 15px/1.45 Umpush;
   padding: 2px 6px;
   border: 2px solid #000;
 }
@@ -40,19 +51,26 @@ body {
 
 h1 {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 6px;
+  text-align: right;
+  background: #111;
+  z-index: 1;
   margin: 0;
-  font: 200 20pt Helvetica Neue;
+  font: 200 20px Helvetica Neue;
   color: #8b8685;
 }
 
 h1 span {
   display: inline-block;
-  padding: 3px 5px;
+  padding: 3px 8px;
   color: #454443;
 }
 h1 span.active {
   box-shadow: 0 0 5px #8b8685;
 }
-
+.reload-text {
+  float: left;
+}

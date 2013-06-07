@@ -1,0 +1,15 @@
+.text-group {
+  margin: 0 auto;
+}
+.text-group td {
+  padding: 0;
+}
+
+.line {
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.line.align-left {
+  text-align: left;
+}

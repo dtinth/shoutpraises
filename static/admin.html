@@ -7,17 +7,24 @@
 
 <body ng-controller="MainController">
 
-<h1>shoutpraises control panel <span id="blank" ng-class="activeClass('blank', blank)" touch ng-click="displayBlank()">[clear]</span></h1>
+<script src="/version"></script>
+<div ng-controller="SongController">
 
-<div id="main" class="main" ng-controller="SongController">
+<h1>
+  <span class="reload-text" touch ng-click="load()">[reload]</span>
+  shoutpraises control panel <span id="blank" ng-class="activeClass('blank', blank)" touch ng-click="displayBlank()">[clear]</span></h1>
+
+<div id="main" class="main">
   <div ng-repeat="song in lyrics" class="song">
     <h2>{{song.name}}</h2>
     <div ng-repeat="section in song.contents" class="section">
-      <div ng-repeat="group in section" ng-class="activeClass('group', group)" touch ng-click="display(group)">
-        <div ng-repeat="line in group.text" class="line">{{line}}</div>
+      <div ng-repeat="group in section" ng-class="activeClass('group', group)" touch ng-click="display(group, song)">
+        <div sp-group="group"></div>
       </div>
     </div>
   </div>
+</div>
+
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="components/jquery/jquery.js"></script>

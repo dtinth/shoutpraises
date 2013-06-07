@@ -8,9 +8,8 @@
 
 <script src="/version"></script>
 <div id="text">
-  <div ng-repeat="line in current.text">{{line}}</div>
+  <div sp-group="current"></div>
   <div ng-hide="$ynchronized">
-    shoutpraises v<script>document.write(version)</script><br>
     <div class="syncing">(synchronizing)</div>
   </div>
 </div>

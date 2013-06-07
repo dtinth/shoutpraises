@@ -1,13 +1,14 @@
+@import "app.css";
 
 body {
   background: #252423;
   font: bold 30px Cordia New, Umpush, Thonburi;
   color: #fff;
+  text-align: center;
 }
 
 #text {
   font-size: 50pt;
-  text-align: center;
   margin-top: 50px;
   text-shadow: 0 4px 1px #000;
 }

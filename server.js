@@ -21,10 +21,9 @@ app.use('/version', function(req, res, next) {
 app.use('/lyrics', function(req, res, next) {
   lyrics.scan(dir)
     .then(function(data) {
-      res.setHeader('Content-Type', 'text/javascript')
-      res.write('lyrics = ')
+      res.setHeader('Content-Type', 'application/json')
       res.write(JSON.stringify(data))
-      res.end(';')
+      res.end()
     })
     .fail(next)
 })
