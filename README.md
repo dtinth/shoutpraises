@@ -1,4 +1,3 @@
-
 shoutpraises
 ============
 
@@ -9,6 +8,8 @@ However, the people using it have to actively focus on controlling the presentat
 This web based lyrics presentation application can be controlled remotely
 via an iPad (or other tablets). This makes it easier for the presentation controller
 to join in and delight in worship.
+
+![shoutpraises screenshot](http://i.imgur.com/RX4pKaP.png)
 
 
 Name
