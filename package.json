@@ -1,6 +1,6 @@
 {
   "name": "shoutpraises",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Web based remotely controlled worship lyrics presentation application.",
   "main": "lyrics.js",
   "directories": {
