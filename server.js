@@ -13,6 +13,7 @@ require('synchroscope').listen(io.of('/synchroscope'))
 app.use(connect.static(__dirname + '/static'))
 
 var dir = process.argv[2] || (__dirname + '/lyrics')
+var libDir = process.argv[3] || (__dirname + '/library')
 
 app.use('/version', function(req, res, next) {
   res.setHeader('Content-Type', 'text/javascript')
@@ -20,6 +21,15 @@ app.use('/version', function(req, res, next) {
 })
 app.use('/lyrics', function(req, res, next) {
   lyrics.scan(dir)
+    .then(function(data) {
+      res.setHeader('Content-Type', 'application/json')
+      res.write(JSON.stringify(data))
+      res.end()
+    })
+    .fail(next)
+})
+app.use('/library', function(req, res, next) {
+  lyrics.scan(libDir)
     .then(function(data) {
       res.setHeader('Content-Type', 'application/json')
       res.write(JSON.stringify(data))

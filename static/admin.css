@@ -2,6 +2,11 @@
 
 @font-face {
   font-family: Umpush;
+  font-weight: normal;
+  src: url(Umpush-Normal.ttf);
+}
+@font-face {
+  font-family: Umpush;
   font-weight: bold;
   src: url(Umpush-Bold.ttf);
 }
@@ -16,17 +21,18 @@ body {
   position: relative;
 }
 
-.song {
+.song, .import {
   display: inline-block;
   vertical-align: top;
   margin-right: 1em;
   margin-bottom: 80px;
   border: 2px solid #555;
   padding-bottom: 4px;
-  min-width: 10em;
 }
-
-.song h2 {
+.song {
+  width: 11em;
+}
+h2 {
   margin: 0; padding: 0;
   background: #555;
   font-size: 12px;
@@ -40,11 +46,34 @@ body {
   border-bottom: 1px solid #444;
 }
 .group {
-  font: bold 15px/1.45 Umpush;
   padding: 2px 6px;
   border: 2px solid #000;
 }
+.group.touching {
+  color: #aa3;
+}
 .group.active {
+  background: #353433;
+  border-color: #656463;
+}
+
+.text {
+  font: bold 15px/1.45 Umpush;
+}
+.import ul {
+  display: block;
+  list-style: none;
+  margin: 0; padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 600px;
+}
+.import li {
+  display: block;
+  margin: 0 4px; padding: 6px 12px;
+  border: 2px solid #000;
+}
+.import li.active {
   background: #353433;
   border-color: #656463;
 }
@@ -62,15 +91,32 @@ h1 {
   font: 200 20px Helvetica Neue;
   color: #8b8685;
 }
-
 h1 span {
   display: inline-block;
   padding: 3px 8px;
   color: #454443;
 }
-h1 span.active {
+h1 .active {
   box-shadow: 0 0 5px #8b8685;
+  background: #000;
+}
+h1 b {
+  padding: 3px 8px;
+  margin: -3px -8px;
 }
 .reload-text {
   float: left;
+}
+.matching-text {
+  display: block;
+  font-weight: normal;
+  font-size: 0.7em;
+  color: #8b8685;
+}
+input {
+  background: #111;
+  color: #fff;
+  width: 90%;
+  display: block;
+  margin: 0 auto 4px;
 }

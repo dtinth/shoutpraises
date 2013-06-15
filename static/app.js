@@ -2,15 +2,15 @@
 angular.module('shoutpraises', ['synchroscope'])
   .controller('MainController', function($scope, $ync) {
     var blank = $scope.blank = { song: '', text: [], id: 'blank' }
-    $scope.current = { song: '', text: ['shoutpraises v' + version], id: 'splash' }
-    $scope.activeClass = function(other, group) {
-      return other + ($scope.current.id == group.id ? ' active' : '')
+    $scope.current = $scope.splash = { song: '', text: [], id: 'splash', splash: true }
+    $scope.active = function(id) {
+      return $scope.current.id == id
     }
     $scope.display = function(group) {
       $scope.current = group
     }
-    $scope.displayBlank = function() {
-      $scope.current = blank
+    $scope.custom = function() {
+      $scope.current = { song: '', id: 'custom', text: [prompt('?')] }
     }
     $ync($scope, ['current'], 'shoutpraises')
   })

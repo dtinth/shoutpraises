@@ -2,13 +2,13 @@
 
 body {
   background: #252423;
-  font: bold 30px Cordia New, Umpush, Thonburi;
+  font: bold 36px Cordia New, Umpush, Thonburi;
   color: #fff;
   text-align: center;
 }
 
 #text {
-  font-size: 50pt;
+  font-size: 56px;
   margin-top: 50px;
   text-shadow: 0 4px 1px #000;
 }
@@ -20,5 +20,24 @@ body {
   bottom: 40px;
 }
 
-
+.splash .bible {
+  color: #aba6a5;
+  font-weight: normal;
+  font-size: 64%;
+  display: inline-block;
+  text-align: left;
+  line-height: 1.3;
+  background: #000;
+  border: 4px solid #454443;
+  padding: 30px;
+}
+.splash .bible b {
+  color: #bef;
+}
+.splash cite {
+  display: block;
+  text-align: right;
+  font-size: 60%;
+  margin-top: 1em;
+}
 

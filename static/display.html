@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="shoutpraises">
 <meta charset=utf-8>
-<title>Display</title>
+<title>shoutpraises Display</title>
 <link rel=stylesheet href=display.css>
 
 <body ng-controller="MainController">
@@ -9,12 +9,26 @@
 <script src="/version"></script>
 <div id="text">
   <div sp-group="current"></div>
+  <div class="splash" ng-show="current.splash">
+    <div>shoutpraises v<script>document.write(version)</script></div>
+    <div class="bible">
+      Let every living creature<br>
+      praise the Lord.<br>
+      <b>&nbsp; &nbsp; Shout praises</b> to the Lord!
+      <cite>Psalm 150:6 (CEV)</cite>
+    </div>
+  </div>
   <div ng-hide="$ynchronized">
     <div class="syncing">(synchronizing)</div>
   </div>
 </div>
 
-<div id="song">{{current.song}}</div>
+<div id="song">
+  {{current.song}}
+  <div ng-show="current.splash">
+    https://github.com/dtinth/shoutpraises
+  </div>
+</div>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="components/jquery/jquery.js"></script>
