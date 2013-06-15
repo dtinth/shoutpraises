@@ -15,14 +15,33 @@ angular.module('shoutpraises', ['synchroscope'])
     $ync($scope, ['current'], 'shoutpraises')
   })
   .directive('spGroup', function($parse) {
-    function format(text) {
+    function format(item) {
       var other = ''
+      var text = item.text
       text = text.replace(/^\|/, function() { other += ' align-left'; return '' })
-      return '<tr><td class="line' + other + '">' + text + '</td></tr>'
+      return '<td colspan="' + item.cols + '" class="line' + other + '">' + text + '</td>'
     }
     return function(scope, element, attrs) {
       scope.$watch(attrs.spGroup, function(value) {
-        element.html('<table class="text-group">' + value.text.map(format).join('') + '</table>')
+        var trs
+        var cols = 1
+        var rows = value.text.map(function(x) {
+          return x.split('&&').map(function(text) {
+            return { text: text, cols: 1 }
+          })
+        })
+        rows.forEach(function(row) {
+          if (row.length > cols) cols = row.length
+        })
+        rows.forEach(function(row) {
+          if (row.length == 1) {
+            row[0].cols = cols
+          }
+        })
+        var trs = rows.map(function(row) {
+          return '<tr>' + row.map(format).join('') + '</tr>'
+        }).join('')
+        element.html('<table class="text-group">' + trs + '</table>')
       })
     }
   })
