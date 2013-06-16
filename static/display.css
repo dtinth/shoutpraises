@@ -41,3 +41,9 @@ body {
   margin-top: 1em;
 }
 
+.ruler {
+  width: 15em;
+  background: #454443;
+  margin: 64px auto 0;
+  height: 4px;
+}
