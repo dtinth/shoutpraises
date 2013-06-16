@@ -1,7 +1,17 @@
 @import "app.css";
 
-body {
+html, body {
+  margin: 0; padding: 0;
+  height: 100%;
+}
+html {
   background: #252423;
+  background-image: url(bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body {
   font: bold 36px Cordia New, Umpush, Thonburi;
   color: #fff;
   text-align: center;
