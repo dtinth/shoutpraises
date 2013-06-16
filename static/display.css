@@ -24,8 +24,10 @@ body {
 }
 
 #song {
+  text-shadow: 0 4px 1px #000;
   position: absolute;
-  color: #8b8685;
+  color: rgba(255,255,255,1);
+  opacity: 0.5;
   right: 40px;
   bottom: 40px;
 }
@@ -37,8 +39,6 @@ body {
   display: inline-block;
   text-align: left;
   line-height: 1.3;
-  background: #000;
-  border: 4px solid #454443;
   padding: 30px;
 }
 .splash .bible b {
@@ -51,9 +51,14 @@ body {
   margin-top: 1em;
 }
 
+.splash .bible, .ruler {
+  background: rgba(0,0,0,0.6);
+  box-shadow: 0 0 10px #fff;
+  border-radius: 16px;
+}
+
 .ruler {
   width: 15em;
-  background: #454443;
   margin: 64px auto 0;
   height: 4px;
 }
