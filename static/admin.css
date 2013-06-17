@@ -29,6 +29,9 @@ body {
   border: 2px solid #555;
   padding-bottom: 4px;
 }
+.import {
+  min-width: 10em;
+}
 .group {
   width: 15em;
 }
@@ -64,9 +67,11 @@ h2 {
   display: block;
   list-style: none;
   margin: 0; padding: 0;
+}
+.song-list {
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 600px;
+  height: 500px;
 }
 .import li {
   display: block;
@@ -120,3 +125,26 @@ input {
   display: block;
   margin: 0 auto 4px;
 }
+
+
+
+
+.tap {
+  background: #111;
+  color: #555;
+  line-height: 64px;
+  text-align: center;
+}
+.tap.touching {
+  background: #555;
+  color: #111;
+}
+.score {
+  font: 12px Helvetica;
+  color: #666;
+}
+
+
+
+
+

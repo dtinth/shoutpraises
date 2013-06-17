@@ -36,12 +36,21 @@
   <div class="import">
     <h2 ng-click="selectSong()">other songs</h2>
     <input type="text" ng-model="searchImport">
-    <ul class="text">
+    <ul class="text song-list">
       <li ng-click="selectSong(song)"
           ng-class="{ active: extra[0] && extra[0].name == song.name }"
           ng-repeat="song in matchLibrary">
         <span ng-bind="song.filename"></span>
         <span class="matching-text" ng-repeat="text in song.matching" ng-bind="text"></span>
+      </li>
+    </ul>
+    <div class="tap" touch="down" ng-click="tap()">TAP ({{taps.length}})</div>
+    <ul class="text tap-result">
+      <li ng-click="resetTap()" ng-show="taps.length > 0">(RESET)</li>
+      <li ng-click="selectSong(current.song); resetTap()"
+          ng-repeat="current in tapResult" style="opacity: {{current.opacity}}">
+        <span ng-bind="current.text"></span>
+        <span ng-bind="current.score" class="score"></span>
       </li>
     </ul>
   </div>
