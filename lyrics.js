@@ -44,10 +44,10 @@ function group(data) {
           var i
           for (i = 0; i < total; i ++) {
             if (code.charAt(i) == ',') {
-              times.push(i / total)
+              times.push(i)
             }
           }
-          times.push(1)
+          times.push(i)
           for (i = 0; i + 1 < times.length; i ++) {
             timing.push(times[i + 1] - times[i])
           }

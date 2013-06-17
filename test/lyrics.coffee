@@ -33,9 +33,9 @@ describe 'lyrics', ->
       contents[0][0].text[0].should.equal('First line')
       contents[0][0].text[1].should.equal('Second line')
       contents[0][0].text[2].should.equal('Third line')
-      contents[0][0].timing[0].should.deep.equal([0.5,0.5])
-      contents[0][0].timing[1].should.deep.equal([0.25,0.5,0.25])
-      contents[0][0].timing[2].should.deep.equal([0.25,0.25,0.25,0.25])
+      contents[0][0].timing[0].should.deep.equal([3,3])
+      contents[0][0].timing[1].should.deep.equal([1,2,1])
+      contents[0][0].timing[2].should.deep.equal([2,2,2,2])
       contents[0][1].text[0].should.equal('Fourth line')
       contents[0][1].timing[0].should.deep.equal([])
     
