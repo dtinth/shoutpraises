@@ -1,3 +1,31 @@
+
+@font-face {
+  font-family: Umpush;
+  font-weight: normal;
+  src: url(font/Umpush-Normal.ttf);
+}
+@font-face {
+  font-family: Umpush;
+  font-weight: bold;
+  src: url(font/Umpush-Bold.ttf);
+}
+
+@font-face {
+  font-family: Norasi;
+  font-weight: normal;
+  src: url(font/Norasi.ttf);
+}
+@font-face {
+  font-family: Norasi;
+  font-weight: bold;
+  src: url(font/Norasi-Bold.ttf);
+}
+
+.text {
+  font-family: Norasi;
+  font-weight: bold;
+}
+
 .text-group {
   margin: 0 auto;
 }
@@ -9,7 +37,6 @@
   text-align: center;
   white-space: pre-wrap;
 }
-
 .line.align-left {
   text-align: left;
 }

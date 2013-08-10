@@ -5,31 +5,39 @@ html, body {
   height: 100%;
 }
 html {
-  background: #252423;
+  background: black;
   background-image: url(bg.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 body {
-  font: bold 36px Cordia New, Umpush, Thonburi;
+  font-size: 48px;
   color: #fff;
   text-align: center;
 }
 
+.bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0.67;
+}
+
 #text {
-  font-size: 56px;
+  font-size: 72px;
   margin-top: 50px;
-  text-shadow: 0 4px 1px #000;
+  text-shadow: 0 2px 6px #000, 0 3px 9px #000;
+  position: relative;
 }
 
 #song {
   text-shadow: 0 4px 1px #000;
   position: absolute;
   color: rgba(255,255,255,1);
-  opacity: 0.5;
+  opacity: 0.36;
   right: 40px;
-  bottom: 40px;
+  bottom: 10px;
 }
 
 .splash .bible {
@@ -58,7 +66,16 @@ body {
 }
 
 .ruler {
-  width: 15em;
+  width: 12.5em;
   margin: 64px auto 0;
   height: 4px;
+}
+
+.showing {
+  opacity: 1;
+  -webkit-transition: 1s opacity, 0.5s -webkit-transform;
+  -moz-transition: 1s opacity, 0.5s -webkit-transform;
+}
+.showing.hide {
+  opacity: 0;
 }

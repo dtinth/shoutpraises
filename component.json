@@ -1,7 +1,0 @@
-{
-  "name": "shoutpraises",
-  "version": "0.0.0",
-  "dependencies": {
-    "jquery": "~1.9.1"
-  }
-}

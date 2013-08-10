@@ -4,11 +4,13 @@
 <title>shoutpraises Display</title>
 <link rel=stylesheet href=display.css>
 
-<body ng-controller="MainController">
+<body ng-controller="MainController" class="text">
+
+<video class="bg" src="bg.webm" loop autoplay></video>
 
 <script src="/version"></script>
 <div id="text">
-  <div sp-group="current"></div>
+  <div sp-group="showing" ng-class="{ showing: true, hide: current.blank }"></div>
   <div class="splash" ng-show="current.splash">
     <div>shoutpraises v<script>document.write(version)</script></div>
     <div class="bible">
@@ -33,6 +35,6 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="components/jquery/jquery.js"></script>
-<script src="components/angular/angular.js"></script>
+<script src="components/angular-unstable/angular.js"></script>
 <script src="sync.js"></script>
 <script src="app.js"></script>

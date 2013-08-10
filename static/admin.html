@@ -19,7 +19,7 @@
 
 <script type="text/ng-template" id="song">
   <div class="song">
-    <h2 ng-click="displayLyric({ id: 'blanksong:' + song.name, text:[] }, song)"
+    <h2 ng-click="displayLyric({ id: 'blanksong:' + song.name, text:[], blank: true }, song)"
         ng-class="{ active: active('blanksong:' + song.name) }"touch>{{song.name}}</h2>
     <div ng-repeat="section in song.contents" class="section">
       <div ng-repeat="group in section"
@@ -60,7 +60,7 @@
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="components/jquery/jquery.js"></script>
-<script src="components/angular/angular.js"></script>
+<script src="components/angular-unstable/angular.js"></script>
 <script src="sync.js"></script>
 <script src="touch.js"></script>
 <script src="lyrics"></script>

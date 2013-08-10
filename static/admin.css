@@ -1,15 +1,5 @@
 @import "app.css";
 
-@font-face {
-  font-family: Umpush;
-  font-weight: normal;
-  src: url(Umpush-Normal.ttf);
-}
-@font-face {
-  font-family: Umpush;
-  font-weight: bold;
-  src: url(Umpush-Bold.ttf);
-}
 body {
   background: #090807;
   color: #e9e8e7;
@@ -30,10 +20,10 @@ body {
   padding-bottom: 4px;
 }
 .import {
-  min-width: 10em;
+  width: 12em;
 }
 .group {
-  width: 15em;
+  width: 12.5em;
 }
 h2 {
   margin: 0; padding: 0;
@@ -61,7 +51,8 @@ h2 {
 }
 
 .text {
-  font: bold 15px/1.45 Umpush;
+  font-size: 15px;
+  line-height: 1.45;
 }
 .import ul {
   display: block;
