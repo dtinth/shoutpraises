@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="shoutpraises">
+<html ng-app="shoutpraises.display">
 <meta charset=utf-8>
 <title>shoutpraises Display</title>
 <link rel=stylesheet href=display.css>
@@ -9,19 +9,23 @@
 <video class="bg" src="bg.webm" loop autoplay></video>
 
 <script src="/version"></script>
-<div id="text">
-  <div sp-group="showing" ng-class="{ showing: true, hide: current.blank }"></div>
-  <div class="splash" ng-show="current.splash">
-    <div>shoutpraises v<script>document.write(version)</script></div>
-    <div class="bible">
-      Let every living creature<br>
-      praise the Lord.<br>
-      <b>&nbsp; &nbsp; Shout praises</b> to the Lord!
-      <cite>Psalm 150:6 (CEV)</cite>
+<div id="text" ng-class="{ fade: true, hide: current.blank }" ng-controller="TextController">
+  <div class="text-display" ng-repeat="current in show"
+    ng-animate="{ enter: 'animate-enter', leave: 'animate-leave' }"
+    >
+    <div sp-group="current"></div>
+    <div class="splash" ng-if="current.splash">
+      <div>shoutpraises v{{version}}</div>
+      <div class="bible">
+        Let every living creature<br>
+        praise the Lord.<br>
+        <b>&nbsp; &nbsp; Shout praises</b> to the Lord!
+        <cite>Psalm 150:6 (CEV)</cite>
+      </div>
+      <div class="ruler"></div>
     </div>
-    <div class="ruler"></div>
   </div>
-  <div ng-hide="$ynchronized">
+  <div ng-if="!$ynchronized">
     <div class="syncing">(synchronizing)</div>
   </div>
 </div>
@@ -38,3 +42,4 @@
 <script src="components/angular-unstable/angular.js"></script>
 <script src="sync.js"></script>
 <script src="app.js"></script>
+<script src="display.js"></script>

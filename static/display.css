@@ -28,9 +28,9 @@ body {
   font-size: 72px;
   margin-top: 50px;
   text-shadow: 0 2px 6px #000, 0 3px 9px #000;
-  position: relative;
+  position: absolute;
+  top: 0; right: 0; left: 0;
 }
-
 #song {
   text-shadow: 0 4px 1px #000;
   position: absolute;
@@ -71,11 +71,35 @@ body {
   height: 4px;
 }
 
-.showing {
+.fade {
   opacity: 1;
-  -webkit-transition: 1s opacity, 0.5s -webkit-transform;
-  -moz-transition: 1s opacity, 0.5s -webkit-transform;
+  -webkit-transition: 2s opacity;
 }
-.showing.hide {
+.fade.hide {
   opacity: 0;
 }
+
+.text-display {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+}
+.animate-enter {
+  -webkit-transition: 0.3s opacity, 0.3s -webkit-transform;
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+}
+.animate-enter.animate-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+}
+.animate-leave {
+  -webkit-transition: 0.3s opacity, 0.3s -webkit-transform;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+}
+.animate-leave.animate-leave-active {
+  opacity: 0;
+  -webkit-transform: translateY(-10px);
+}
+
+

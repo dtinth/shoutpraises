@@ -1,11 +1,11 @@
 
 angular.module('shoutpraises', ['synchroscope'])
   .controller('MainController', function($scope, $ync) {
+
     var blank = $scope.blank = { song: '', text: [], id: 'blank', blank: true }
+    $scope.version = window.version
     $scope.current = $scope.splash = { song: '', text: [], id: 'splash', splash: true }
-    $scope.$watch('current', function(current) {
-      if (!current.blank) $scope.showing = current
-    })
+
     $scope.active = function(id) {
       return $scope.current.id == id
     }
