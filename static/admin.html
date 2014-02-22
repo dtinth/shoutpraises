@@ -12,6 +12,7 @@
 
 <h1>
   <span class="reload-text" touch ng-click="load()">[reload]</span>
+  <span ng-class="{ 'black-text': true, active: black }" ng-click="toggleBlack()">[black]</span>
   <b ng-class="{ active: active('splash') }" ng-click="display(splash)">shoutpraises</b> v{{version}} control panel
   <span ng-class="{ active: active('custom') }" ng-click="custom()">[display]</span>
   <span id="blank" ng-class="{ active: active('blank') }" touch ng-click="display(blank)">[clear]</span>
@@ -60,7 +61,7 @@
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="components/jquery/jquery.js"></script>
-<script src="components/angular-unstable/angular.js"></script>
+<script src="components/angular/angular.js"></script>
 <script src="sync.js"></script>
 <script src="touch.js"></script>
 <script src="lyrics"></script>

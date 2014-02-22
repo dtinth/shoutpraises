@@ -3,9 +3,13 @@ angular.module('shoutpraises', ['synchroscope'])
   .controller('MainController', function($scope, $ync) {
 
     var blank = $scope.blank = { song: '', text: [], id: 'blank', blank: true }
+    $scope.black = false
     $scope.version = window.version
     $scope.current = $scope.splash = { song: '', text: [], id: 'splash', splash: true }
 
+    $scope.toggleBlack = function() {
+      $scope.black = !$scope.black
+    }
     $scope.active = function(id) {
       return $scope.current.id == id
     }
@@ -15,7 +19,7 @@ angular.module('shoutpraises', ['synchroscope'])
     $scope.custom = function() {
       $scope.current = { song: '', id: 'custom', text: [prompt('?')] }
     }
-    $ync($scope, ['current'], 'shoutpraises')
+    $ync($scope, ['current', 'black'], 'shoutpraises')
   })
   .directive('spGroup', function($parse) {
     function format(item) {

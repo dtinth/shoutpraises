@@ -10,9 +10,7 @@
 
 <script src="/version"></script>
 <div id="text" ng-class="{ fade: true, hide: current.blank }" ng-controller="TextController">
-  <div class="text-display" ng-repeat="current in show"
-    ng-animate="{ enter: 'animate-enter', leave: 'animate-leave' }"
-    >
+  <div class="text-display animate" ng-repeat="current in show">
     <div sp-group="current"></div>
     <div class="splash" ng-if="current.splash">
       <div>shoutpraises v{{version}}</div>
@@ -37,9 +35,12 @@
   </div>
 </div>
 
+<div id="black" ng-class="{ black: black }"></div>
+
 <script src="/socket.io/socket.io.js"></script>
 <script src="components/jquery/jquery.js"></script>
-<script src="components/angular-unstable/angular.js"></script>
+<script src="components/angular/angular.js"></script>
+<script src="components/angular-animate/angular-animate.js"></script>
 <script src="sync.js"></script>
 <script src="app.js"></script>
 <script src="display.js"></script>
